@@ -1,0 +1,93 @@
+/* palesa.css */
+
+/* Global Styles */
+.root {
+    -fx-background-color: linear-gradient(to bottom right, #F8BBD0, #F48FB1);
+    -fx-font-family: 'Arial';
+    -fx-font-size: 14px;
+}
+
+/* Headings, Labels */
+.label {
+    -fx-font-size: 18px; /* Increase font size for headings */
+    -fx-text-fill: #3D3D3D; /* Dark gray color for text */
+    -fx-font-weight: bold; /* Bold text */
+}
+
+/* Buttons */
+.button {
+    -fx-background-color: linear-gradient(to right, #FF4081, #F50057);
+    -fx-text-fill: white;
+    -fx-padding: 10px 20px;
+    -fx-font-size: 14px;
+    -fx-background-radius: 5px; /* Rounded corners */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 5, 0.0, 0, 1);
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(to right, #F50057, #FF4081); /* Change gradient direction on hover */
+}
+
+/* Text Fields */
+.text-field, .password-field, .combo-box {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #000000;
+    -fx-border-color: #D6D6D6; /* Light gray border */
+    -fx-border-radius: 5px; /* Rounded corners */
+    -fx-padding: 5px;
+}
+
+/* Text Field Focused State */
+.text-field:focused, .password-field:focused, .combo-box:focused {
+    -fx-border-color: #FF4081; /* Change border color on focus */
+    -fx-border-width: 1.5px; /* Thicker border */
+}
+
+/* VBox Styles for spacing and padding */
+.vbox {
+    -fx-spacing: 10px; /* Space between child elements */
+    -fx-padding: 20px; /* Padding around VBox */
+    -fx-alignment: center; /* Center children */
+}
+
+/* ListView */
+.list-view {
+    -fx-background-color: #ffffff; /* White background for ListView */
+    -fx-border-color: #D6D6D6; /* Light gray border */
+    -fx-border-width: 1px; /* Border width */
+}
+
+.list-view .list-cell {
+    -fx-text-fill: #3D3D3D; /* Text color for ListView items */
+}
+
+/* Tooltip Styles */
+.tooltip {
+    -fx-background-color: #FF4081; /* Tooltip background */
+    -fx-text-fill: white; /* Tooltip text color */
+    -fx-border-radius: 5px;
+}
+
+/* Success and Error Messages (Alerts) */
+.alert {
+    -fx-background-color: #FFEB3B; /* Yellow background for warnings */
+    -fx-text-fill: #000000; /* Black text */
+    -fx-border-radius: 5px; /* Rounded corners */
+    -fx-border-color: #FFD600; /* Border color */
+}
+
+/* Dark Background for Modal Dialogs */
+.dialog {
+    -fx-background-color: rgba(0, 0, 0, 0.75); /* Semi-transparent dark background for modals */
+}
+
+/* Header and Footer Styles */
+.header {
+    -fx-background-color: #F3F4F6; /* Light gray */
+    -fx-padding: 10px; /* Padding around header */
+}
+
+.footer {
+    -fx-background-color: #F3F4F6; /* Light gray */
+    -fx-padding: 10px; /* Padding around footer */
+}
