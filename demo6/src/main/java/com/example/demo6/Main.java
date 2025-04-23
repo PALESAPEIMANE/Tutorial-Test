@@ -8,8 +8,8 @@ import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import javafx.geometry.Insets;
-import javafx.stage.FileChooser; // Importing FileChooser
-import javafx.scene.chart.*; // Importing JavaFX Charts
+import javafx.stage.FileChooser;
+import javafx.scene.chart.*; 
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -455,7 +455,7 @@ public class Main extends Application {
                 selectedCustomerLabel, searchCustomerIdField, searchCustomerButton,
                 customersListView, customerIdField, nameField, contactField, licenseField,
                 addButton, updateButton, deleteButton, goBackButton,
-                new Label("Customer Bookings:"), bookingsListView // Added bookingsListView here
+                new Label("Customer Bookings:"), bookingsListView // Add bookingsListView 
         );
 
         customerForm.getStylesheets().add(css); // Add CSS
@@ -490,7 +490,7 @@ public class Main extends Application {
             while (rs.next()) {
                 bookings.add(new Bookings(
                         rs.getInt("rental_id"),
-                        "Customer Name Placeholder", // Placeholder, please replace with actual customer name if available
+                        "Customer Name Placeholder", 
                         rs.getString("model"),
                         rs.getDate("start_date"),
                         rs.getDate("end_date"),
@@ -569,7 +569,7 @@ public class Main extends Application {
             double dailyRate = Double.parseDouble(dailyRateField.getText());
             String availability = availabilityCombo.getValue();
             addVehicle(model, dailyRate, availability);
-            vehiclesListView.getItems().add(new Vehicle(-1, model, dailyRate, availability)); // Add to ListView with fake ID for display
+            vehiclesListView.getItems().add(new Vehicle(-1, model, dailyRate, availability)); 
         });
 
         updateButton.setOnAction(e -> {
@@ -584,7 +584,7 @@ public class Main extends Application {
         deleteButton.setOnAction(e -> {
             int vehicleId = Integer.parseInt(vehicleIdField.getText());
             deleteVehicle(vehicleId);
-            vehiclesListView.getItems().remove(vehiclesListView.getSelectionModel().getSelectedItem()); // Remove from ListView
+            vehiclesListView.getItems().remove(vehiclesListView.getSelectionModel().getSelectedItem()); 
         });
 
         vehiclesListView.setOnMouseClicked(event -> {
@@ -701,7 +701,7 @@ public class Main extends Application {
 
                     if (returnDate.isAfter(endDate)) {
                         long lateDays = ChronoUnit.DAYS.between(endDate, returnDate);
-                        double lateFee = lateDays * (dailyRate * 0.5); // Example: 50% daily rate as late fee
+                        double lateFee = lateDays * (dailyRate * 0.5); 
                         totalAmount += lateFee;
 
                         showAlert("Invoice", generateInvoice(bookingId, totalAmount, lateDays, true));
@@ -717,7 +717,7 @@ public class Main extends Application {
                         updateStmt.executeUpdate();
                     }
 
-                    // Optionally, mark the rental as completed in the database
+                    // mark the rental as completed in the database
                     String completeRentalQuery = "UPDATE rentals SET status = 'completed' WHERE rental_id = ?";
                     try (PreparedStatement completeStmt = connection.prepareStatement(completeRentalQuery)) {
                         completeStmt.setInt(1, bookingId);
